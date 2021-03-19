@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <title>Čistá mzda</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <header class="jumbotron-fluid bg-success p-5">
+        <h1 class="text-white text-center display-2">Výpočet čisté mzdy</h1>
+    </header>  
+    <main class="container">
+        <div class="container mt-3">
+            <form>
+                <div class="form-group row">
+                    <label for="gross" class="col-sm-2 col-form-label">Hrubá mzda v KČ</label>
+                    <div class="col-sm-10">
+                        <input type="number" min="0" class="form-control" name="gross" id="gross" 
+                        value="15000" step="50">
+                    </div>
+                    <button type="button" name="unknownButton" id="unknownButton" class="btn btn-secondary mt-3 btn-lg btn-block">Neznám svou hrubou mzdu</button>
+                </div>
+                <div class="form-group row" id="unknown">
+                    <label for="hours" class="col-sm-2 col-form-label">Počet odpracovaných hodin</label>
+                    <div class="col-sm-4">
+                        <input type="number" min="0" max="480" class="form-control" name="hours" id="hours" 
+                        value="100">
+                    </div>
+                    <label for="wage" class="col-sm-2 col-form-label">Mzda za hodinu v KČ</label>
+                    <div class="col-sm-4">
+                        <input type="number" min="90" class="form-control" name="wage" id="wage" 
+                        value="100" step="any">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="children" class="col-sm-3 col-form-label">Počet dětí</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" name="children" id="children" 
+                        value="0" min="0" max="10">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="disability" class="col-sm-3 col-form-label">Postižení</label>
+                    <div class="col-sm-9">
+                          <select class="form-control" name="disability" id="disability">
+                            <option value="0">Žádné</option>
+                            <option value="210">Invalidní důchod 1. a 2. stupně</option>
+                            <option value="420">Invalidní důchod 3. stupně</option>
+                            <option value="1345">Držitel průkazu ZTP/P</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Student do 26-ti let</label>
+                    <div class="col-sm-9">
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="student" id="no" value="0" checked> Ne
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="student" id="yes" value="335"> Ano
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="offset-sm-12 col-sm-12 text-center">
+                        <button type="button" id="calc" class="btn btn-success">Vypočítat</button>
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <div id="result">Zde bude vypočítána čistá mzda</div>
+        </div>
+    </main>
+    <footer class="container-fluid text-center">
+        <hr>
+        <div>&copy; 2021 - IT4 David Dumbrovský</div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js\main.js"></script>
+  </body>
+</html>
